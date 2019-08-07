@@ -68,7 +68,7 @@ class Validate {
         $this->text($name, $value, $required);
         if ($field->hasError()) { return; }
         // Call the pattern method to validate a phone number in the (999) 999-9999 format
-        $pattern = '/^((\+0?1\s)?)\(?\d{3}\)?[\s.\s]\d{3}[\s.-]\d{4}$/';
+        $pattern = '/^[(]{1}[0-9]{3}[)]{1}[0-9]{3}[-]{1}[0-9]{4}$/';
         $message = 'Use (999) 999-9999 format.';
         if (!preg_match($pattern,$name)){
             $field->setErrorMessage('Please');
